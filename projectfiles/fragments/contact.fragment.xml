@@ -1,0 +1,42 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+  <Dialog>
+	<Panel
+		id="quickViewCardContainer"
+		width="80%"
+		height="300px">
+		<QuickViewCard
+			
+			>
+			<QuickViewPage
+				
+				header="Contact info"
+                	icon= "sap-icon://building"
+			
+				title="{FirstName}"
+				
+				description="Address: {City},{Region}    {Address} 
+                                   
+                                 Country: {Country}
+                                  {PostalCode}"
+				>
+				
+				<QuickViewGroup heading="Main Contact" >
+					<QuickViewGroupElement
+						label="Phone"
+						value="{HomePhone}"
+                        emailSubject="{LastName}@sap.com"
+							
+						/>
+				</QuickViewGroup>
+			</QuickViewPage>
+		</QuickViewCard>
+    
+                                                <Button text="Close" press="onClose" />
+                                                 
+                               
+                                 
+                                                <Button text="Ok" press="onAdd1"/>
+                                 
+	</Panel>
+    </Dialog>
+</core:FragmentDefinition>

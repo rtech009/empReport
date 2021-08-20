@@ -1,0 +1,89 @@
+<mvc:View xmlns:f2="sap.f"
+	controllerName="employeelr.controller.Details"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    	xmlns:f="sap.ui.layout.form"
+	displayBlock="true">
+	     
+		<Page title="Employee Name : {FirstName} {LastName}"  showNavButton="true" navButtonPress="onNavBack">
+        <IconTabBar>
+          <items>
+          <IconTabFilter text="Employee Info" >
+       	<content>
+					<f:SimpleForm
+						editable="false"
+						layout="ResponsiveGridLayout"
+						labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+						columnsL="1" columnsM="1">
+						<f:content>
+                             <Label text="EmployeeID"/>
+							<Text text="{EmployeeID}"/>
+							<Label text="FirstName"/>
+							<Text text="{FirstName}"/>
+							<Label text="LastName"/>
+							<Text text="{LastName}"/>
+							<Label text="Address"/>
+							<Text text="{Address}"/>
+							<Label text="City"/>
+							<Text text="{City}, {Region}"/>
+							<Label text="PostalCode"/>
+							<Text text="{PostalCode}"/>
+							<Label text="Phone"/>
+							<Text text="{HomePhone}"/>
+							<Label text="Country"/>
+							<Text text="{Country}"/>
+                            <Label text="Title"/>
+							<Text text="{Title}"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+                </IconTabFilter>
+                <IconTabFilter text="Profile">
+                <HBox>
+                 <f2:Avatar
+							src="https://png.pngtree.com/png-vector/20190120/ourmid/pngtree-man-vector-icon-png-image_470295.jpg"
+							displaySize="M"
+                            	
+							showBorder="true">
+                            	<f2:detailBox>
+							<LightBox>
+								<LightBoxItem
+										imageSrc="https://png.pngtree.com/png-vector/20190120/ourmid/pngtree-man-vector-icon-png-image_470295.jpg"
+										alt="Image"
+										title="{FirstName}"
+										subtitle="{Country}">
+								</LightBoxItem>
+							</LightBox>
+
+						</f2:detailBox>
+							</f2:Avatar>
+                         
+                              <ObjectMarker type="Favorite" class="sapUiTinyMarginBegin"/>
+                              	<VBox>
+					<Text text="{Title}"/>
+				                
+						<Link text="{HomePhone}"/>
+						<Link text="{LastName}@sap.com"/>
+                         <Image src="https://1000logos.net/wp-content/uploads/2017/03/Linkedin-Logo.png" width="5%"/>
+					</VBox>
+                     
+                   </HBox>
+                   <l:VerticalLayout width="100%">
+                    <TextArea value="About--->{Notes}" valueState="Success" width="50%" rows="4"/>
+                   </l:VerticalLayout>                  
+                  <!--<ProgressIndicator
+				class="sapUiSmallMarginBottom"
+				percentValue="40"
+				displayValue="40% progress"
+				showValue="true"
+				state="Success" />-->
+                	
+                </IconTabFilter>
+               
+              </items>
+             </IconTabBar> 
+             <Button text="contact" press="showContact"/>
+        </Page>
+       
+</mvc:View>

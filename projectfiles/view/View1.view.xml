@@ -1,0 +1,134 @@
+<mvc:View controllerName="employeelr.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" 
+xmlns:tnt="sap.tnt" xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core" 	xmlns:l="sap.ui.layout"
+>
+
+  
+   
+   <!-- <Page id="page" title="">-->
+  <l:VerticalLayout>
+  <VBox>	
+		<Image src="https://cdn.freelogovectors.net/wp-content/uploads/2014/03/Capgemini_Logo_New.png" width="13%" height="15%"/>
+	
+       
+		<!--<fb:FilterBar id="filterbar"  reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false">
+			<fb:filterGroupItems>
+				<fb:FilterGroupItem groupName="__$INTERNAL$" name="A" label="name">
+						<fb:control>
+										<Select
+										id="slName"
+										forceSelection="true"
+										change="onSelectChange"
+										items="{
+                                                    path: '/Employees'
+                                                }">
+										<core:Item key="{key}" text="{FirstName}"/>
+										</Select>
+									</fb:control>	
+				</fb:FilterGroupItem>
+
+				
+				
+				
+
+				
+
+				
+			</fb:filterGroupItems>
+
+	    </fb:FilterBar>-->
+
+		                     	
+		                 <HBox>
+						<SearchField
+							id="searchField"
+                            class="search1"
+                           
+                           search="onSearch">
+                        
+						</SearchField>
+		
+						<Button
+							id="sortButton"
+                            class="sort1"
+							press="handleSortButtonPressed"
+							icon="sap-icon://sort"
+							type="Transparent"/>
+						<Button
+							id="filterButton"
+                            class="filter1"
+							press="handleFilterButtonPressed"
+							icon="sap-icon://filter"
+							type="Transparent"/>
+						<Button text="Print" type="Emphasized" press="onExport"/>
+					 </HBox>
+		
+	</VBox>
+    <Label text="Report" design="Bold"/>
+  
+     <l:content>
+       <Table id="Table1" items="{path: '/Employees'}">
+      
+       <columns>
+         <Column width="12%">
+          <Text text="Employee Id"/>
+         </Column>
+        </columns>
+        <columns>
+         <Column width="12%">
+          <Text text="FirstName"/>
+         </Column>
+        </columns>
+        
+        <columns>
+         <Column width="12%">
+          <Text text="Title"/>
+         </Column>
+        </columns>
+        <columns>
+         <Column width="12%">
+          <Text text="Hire date"/>
+         </Column>
+        </columns>
+        <columns>
+         <Column width="12%">
+          <Text text="Address"/>
+         </Column>
+        </columns>
+        <columns>
+         <Column width="12%">
+          <Text text="Country"/>
+         </Column>
+        </columns>
+        <columns>
+         <Column width="12%">
+          <Text text="Phone"/>
+         </Column>
+        </columns>
+        <items>
+         <ColumnListItem type="Navigation" press="onPressItem">
+          <cells>
+          
+          <Link id="NameID1" text="{EmployeeID}" press="handleLinkPress"/>
+          <Text id="NameID2" text="{FirstName}"/>
+          <Text id="NameID3" text="{Title}"/>
+          <Text id="NameID4" text="{path: 'HireDate',
+  type: 'sap.ui.model.type.Date',
+  formatOptions: { 
+    pattern: 'yyyy MMMM dd' 
+  }  
+}"/>
+          <Text id="NameID5" text="{Address}"/>
+           <Text id="NameID6" text="{Country}"/>
+            <Text id="NameID7" text="{HomePhone}"/>
+          </cells>
+         </ColumnListItem>
+        </items>
+       </Table>
+     </l:content>
+     	</l:VerticalLayout>
+  <!-- </Page>-->
+  
+ 
+</mvc:View>
+
+
